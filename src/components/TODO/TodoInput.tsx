@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { EnterButton } from "./EnterButton";
 
 type Props = {
     addTodo: (content: string) => void;
@@ -6,8 +7,16 @@ type Props = {
 export const TodoInput = (props: Props) => {
     const [value, setValue] = useState("");
 
+    const handleEnter = () => {
+        if (value.length === 0) {
+            return;
+        }
+        props.addTodo(value);
+        setValue("");
+    };
+
     return (
-        <div className="flex space-x-2">
+        <div className="flex">
             <input
                 type="text"
                 value={value}
@@ -15,16 +24,12 @@ export const TodoInput = (props: Props) => {
                     const v = e.currentTarget.value;
                     setValue(v);
                 }}
-                className="rounded-sm p-2"
-            />
-            <button
-                className="rounded-md bg-blue-500 p-3 font-bold"
-                onClick={() => {
-                    props.addTodo(value);
+                className="rounded-l-sm p-2 outline-none"
+                onKeyDown={(e) => {
+                    if (e.key === "Enter") handleEnter();
                 }}
-            >
-                Enter !
-            </button>
+            />
+            <EnterButton onClick={handleEnter} />
         </div>
     );
 };
