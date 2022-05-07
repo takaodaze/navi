@@ -11,7 +11,7 @@ export const TodoList = (props: Props) => {
                 >
                     <div>{todoItem.content}</div>
                     <div
-                        className="weight rounded-md bg-green-500 p-1 text-white"
+                        className="weight rounded-md bg-green-500 p-2 font-bold text-white"
                         onClick={() => {
                             props.deleteTodo(todoItem.id);
                         }}

@@ -18,12 +18,12 @@ export const TodoInput = (props: Props) => {
                 className="rounded-sm p-2"
             />
             <button
-                className="rounded-md bg-blue-500 p-3"
+                className="rounded-md bg-blue-500 p-3 font-bold"
                 onClick={() => {
                     props.addTodo(value);
                 }}
             >
-                enter!
+                Enter !
             </button>
         </div>
     );
