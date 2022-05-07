@@ -1,9 +1,15 @@
+import { debug } from "../../util/debug";
 import { TodoItem } from "./Todo";
 
 type Props = { todoList: TodoItem[]; deleteTodo: (id: number) => void };
+
 export const TodoList = (props: Props) => {
+    debug(props.todoList);
     return (
         <div className="flex-col space-y-2 rounded-lg bg-white p-4">
+            {props.todoList.length === 0 && (
+                <div className="font-bold">ALL DONE!</div>
+            )}
             {props.todoList.map((todoItem) => (
                 <div
                     key={todoItem.id}
