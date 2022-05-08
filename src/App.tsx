@@ -1,11 +1,9 @@
-import { ChatInput } from "./components/ChatInput";
-import { Todo } from "./components/TODO/Todo";
+import { SearchInput } from "./components/SearchInput";
 
 export const App = () => {
     return (
         <div className="p-2">
-            <ChatInput />
-            <Todo />
+            <SearchInput />
         </div>
     );
 };
