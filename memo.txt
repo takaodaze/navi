@@ -1,0 +1,2 @@
+これ使ったら、無料で実装できそう
+https://serpapi.com/duckduckgo-search-api
