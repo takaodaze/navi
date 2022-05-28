@@ -1,7 +1,8 @@
 export const mainCommandHandler = () => {
+  console.log("");
   console.log("hello takao.");
-
   console.log("何をしますか");
+  printMenuText(0);
 };
 
 type Menu = "hoge" | "foo";
@@ -22,7 +23,7 @@ const printMenuText = (selector: number) => {
     return prev + menuLine;
   }, "");
 
-  return menuText;
+  console.log(menuText);
 };
 
 Deno.test({ name: "printMenuText" }, () => {
